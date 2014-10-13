@@ -27,7 +27,11 @@ By default the plugin reads the banners names from **configs/graphics.txt**, whi
 {
 	"1"
 	{
-    	"file" "banner.png"
-    }
+		"file"		"banner.png"
+	}
+	"2"
+	{
+		"file"		"steamgroup.png"
+	}
 }
 ```
