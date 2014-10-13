@@ -24,7 +24,7 @@ public OnPluginStart()
 public OnMapEnd()
 {
 	current_banner++;
-	if(current_banner > amount_of_banners)
+	if (current_banner > amount_of_banners)
 	{
 		current_banner = 1;
 	}
@@ -36,7 +36,7 @@ ParseBanners()
 
 	new banner_foreach = 1;
 	new String:bannerFile[64];
-	if(g_hBanners)
+	if (g_hBanners)
 		CloseHandle(g_hBanners);
 	
 	g_hBanners = CreateKeyValues("Graphics");
@@ -45,7 +45,7 @@ ParseBanners()
 	GetConVarString(g_hFile, sFile, sizeof(sFile));
 	BuildPath(Path_SM, sPath, sizeof(sPath), "configs/%s", sFile);
 	
-	if(!FileExists(sPath))
+	if (!FileExists(sPath))
 		SetFailState("File Not Found: %s", sPath);
 	
 	FileToKeyValues(g_hBanners, sPath);
@@ -53,7 +53,7 @@ ParseBanners()
 	
 	do
 	{		
-		if(current_banner == banner_foreach)
+		if (current_banner == banner_foreach)
 		{
 			KvGetString(g_hBanners, "file", bannerFile, sizeof(bannerFile));
 		}
